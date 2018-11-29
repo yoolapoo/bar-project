@@ -1,12 +1,8 @@
 import React from 'react';
-import {Image, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View,} from 'react-native';
+import {Image, Platform, ScrollView, StyleSheet, Text, View,} from 'react-native';
 import {WebBrowser} from 'expo';
+import List from "../components/List";
 
-import {MonoText} from '../components/StyledText';
-import PizzaTranslator from "../components/PizzaTranslator";
-import Bananas from "../components/Bananas";
-import SectionListBasics from "../components/SectionListBasics";
-import FetchExample from "../requests/FetchExample";
 
 export default class HomeScreen extends React.Component {
     static navigationOptions = {
@@ -21,38 +17,23 @@ export default class HomeScreen extends React.Component {
                         <Image
                             source={
                                 __DEV__
-                                    ? require('../assets/images/robot-dev.png')
+                                    ? require('../assets/images/logo.png')
                                     : require('../assets/images/robot-prod.png')
                             }
                             style={styles.welcomeImage}
                         />
+                        <Text>BAR PROJECT</Text>
                     </View>
 
                     <View style={styles.getStartedContainer}>
-                        <Bananas/>
-                        <FetchExample/>
-
+                        <List/>
                     </View>
 
-                    <PizzaTranslator/>
-
-
-
-
-
-
-                    <View style={styles.helpContainer}>
-                        <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-                            <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-                        </TouchableOpacity>
-                    </View>
                 </ScrollView>
 
                 <View style={styles.tabBarInfoContainer}>
-                    <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
 
                     <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-                        <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
                     </View>
                 </View>
             </View>
