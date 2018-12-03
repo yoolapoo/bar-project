@@ -27,7 +27,7 @@ function getMapsParameters(res) {
 	var params = [];
 
     params.address = '197 rue Nationale Lille France';
-    params.key = 'AIzaSyB2OyDZO1DKuqxAjCzARYC7LMltqiMxftc';
+    params.key = 'LOL';
 
     params.address = params.address.replaceAll(' ','+');
 
